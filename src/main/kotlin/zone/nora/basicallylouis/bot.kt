@@ -4,7 +4,7 @@ import net.dv8tion.jda.api.JDA
 import net.dv8tion.jda.api.JDABuilder
 import zone.nora.basicallylouis.commands.impl.general.ServerCommand
 import zone.nora.basicallylouis.commands.impl.general.SkinCommand
-import zone.nora.basicallylouis.config.TOKEN
+import zone.nora.basicallylouis.config.BOT_TOKEN
 import zone.nora.basicallylouis.listeners.CommandListener
 import java.lang.Exception
 
@@ -12,7 +12,7 @@ lateinit var jda: JDA
 
 fun main() {
     try {
-        jda = JDABuilder.createDefault(TOKEN).addEventListeners(
+        jda = JDABuilder.createDefault(BOT_TOKEN).addEventListeners(
             CommandListener()
         ).build()
 

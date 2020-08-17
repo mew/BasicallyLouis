@@ -3,7 +3,7 @@ package zone.nora.basicallylouis.config
 /**
  * Discord Bot Token.
  */
-const val TOKEN: String = "MjkxNzIzNDk4NzIyNjg5MDI1.WMnWrg.5jxRo07AoTVFZ4a513lo3SpGNgY"
+const val BOT_TOKEN: String = "bot-token"
 
 /**
  * Your Discord ID.
