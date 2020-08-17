@@ -30,6 +30,9 @@ const val EMBED_FOOTER: String = "(c) Nora 2020"
  */
 const val BOT_IMAGE: String = "https://i.gyazo.com/e2e5cf9460cacfbaa2c074647e1efb10.png"
 
+/**
+ * Image shown on a command failing.
+ */
 const val ERROR_IMAGE: String = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Warning_icon.svg/865px-Warning_icon.svg.png"
 
 /**

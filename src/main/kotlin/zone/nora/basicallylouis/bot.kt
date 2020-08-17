@@ -9,6 +9,9 @@ import zone.nora.basicallylouis.commands.impl.general.*
 import zone.nora.basicallylouis.commands.impl.hypixel.HypixelStatsCommand
 import zone.nora.basicallylouis.commands.impl.hypixel.SeenCommand
 import zone.nora.basicallylouis.commands.impl.hypixel.WatchdogCommand
+import zone.nora.basicallylouis.commands.impl.moderation.BanCommand
+import zone.nora.basicallylouis.commands.impl.moderation.KickCommand
+import zone.nora.basicallylouis.commands.impl.moderation.UnbanCommand
 import zone.nora.basicallylouis.commands.impl.utility.DiscordCommand
 import zone.nora.basicallylouis.commands.impl.utility.ModsCommand
 import zone.nora.basicallylouis.commands.impl.utility.PingCommand
@@ -50,6 +53,9 @@ fun main() {
         CommandListener.registerCommand(DiscordCommand())
         CommandListener.registerCommand(PingCommand())
         CommandListener.registerCommand(SlotsCommand())
+        CommandListener.registerCommand(BanCommand())
+        CommandListener.registerCommand(UnbanCommand())
+        CommandListener.registerCommand(KickCommand())
 
     } catch (e: Exception) {
         println("Failed to load bot with exception ${e::class.java}:")
