@@ -16,6 +16,7 @@ dependencies {
     implementation(kotlin("stdlib"))
     implementation("net.dv8tion", "JDA", "4.2.0_192")
     implementation("com.github.mew", "slothpixel-jvm", "ab4e7984fc")
+    implementation("de.mkammerer", "argon2-jvm", "2.7")
 
     testCompile("junit", "junit", "4.12")
 }

@@ -9,8 +9,16 @@ class SerializedAshconUser {
     @SerializedName("username")
     val username: String = "null"
 
+    @SerializedName("username_history")
+    val usernameHistory: ArrayList<Username> = ArrayList()
+
     @SerializedName("textures")
     val textures: Textures = Textures()
+
+    class Username {
+        @SerializedName("username")
+        val username: String = ""
+    }
 
     class Textures {
         @SerializedName("skin")

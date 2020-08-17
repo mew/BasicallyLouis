@@ -26,16 +26,19 @@ class HelpCommand : AbstractCommand("help", false) {
         val generalCommands = ArrayList<String>()
         val hypixelCommands = ArrayList<String>()
         val funCommands = ArrayList<String>()
+        val utilityCommands = ArrayList<String>()
         CommandListener.registeredCommands.forEach {
             when (it.getCommandCategory()) {
                 Category.GENERAL -> generalCommands.add(it.commandName)
                 Category.HYPIXEL -> hypixelCommands.add(it.commandName)
                 Category.FUN -> funCommands.add(it.commandName)
+                Category.UTILITY -> utilityCommands.add(it.commandName)
             }
         }
-        builder.addField("General", "`${generalCommands.joinToString("`, `")}`", false)
-        builder.addField("Hypixel", "`${hypixelCommands.joinToString("`, `")}`", false)
-        builder.addField("Fun", "`${funCommands.joinToString("`, `")}`", false)
+        builder.addField(Category.GENERAL.name, "`${generalCommands.joinToString("`, `")}`", false)
+        builder.addField(Category.HYPIXEL.name, "`${hypixelCommands.joinToString("`, `")}`", false)
+        builder.addField(Category.FUN.name, "`${funCommands.joinToString("`, `")}`", false)
+        builder.addField(Category.UTILITY.name, "`${utilityCommands.joinToString("`, `")}`", false)
         builder.setFooter(EMBED_FOOTER)
 
         event.channel.sendMessage(builder.build()).queue()
