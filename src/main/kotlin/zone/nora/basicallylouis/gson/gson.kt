@@ -2,6 +2,7 @@ package zone.nora.basicallylouis.gson
 
 import com.google.gson.Gson
 import com.google.gson.JsonElement
+import com.google.gson.JsonObject
 import com.google.gson.JsonParser
 import com.google.gson.reflect.TypeToken
 import okhttp3.OkHttpClient
@@ -11,6 +12,8 @@ import java.lang.reflect.Type
 val gson = Gson()
 
 fun parse(jsonString: String): JsonElement = JsonParser().parse(jsonString)
+
+fun parseAsObj(jsonString: String): JsonObject = parse(jsonString).asJsonObject
 
 fun getContent(rest: String): String {
     val client = OkHttpClient()
@@ -23,4 +26,4 @@ fun getContent(rest: String): String {
     return response.body()!!.string()
 }
 
-inline fun <reified T> typeToken(): Type = object: TypeToken<T>() {}.type
+inline fun <reified T> typeToken() = object: TypeToken<T>() {}.type

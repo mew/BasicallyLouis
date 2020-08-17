@@ -1,13 +1,14 @@
 package zone.nora.basicallylouis.gson.server
 
 import com.google.gson.annotations.SerializedName
+import zone.nora.basicallylouis.config.ERROR_IMAGE
 
 class SerializedMinecraftServer {
     @SerializedName("online")
     val online: Boolean = false
 
     @SerializedName("favicon")
-    val favicon: String = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Warning_icon.svg/865px-Warning_icon.svg.png"
+    val favicon: String = ERROR_IMAGE
 
     @SerializedName("players")
     val players: Players = Players()
