@@ -3,6 +3,7 @@ package zone.nora.basicallylouis.commands.impl.general
 import net.dv8tion.jda.api.EmbedBuilder
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent
 import zone.nora.basicallylouis.commands.AbstractCommand
+import zone.nora.basicallylouis.commands.category.Category
 import zone.nora.basicallylouis.config.EMBED_FOOTER
 import zone.nora.basicallylouis.gson.getContent
 import zone.nora.basicallylouis.gson.gson
@@ -11,7 +12,9 @@ import zone.nora.basicallylouis.gson.server.SerializedMinecraftServer
 import zone.nora.basicallylouis.gson.typeToken
 
 class ServerCommand : AbstractCommand("server") {
-    override fun commandUsage(): String = "server <server>"
+    override fun getCommandUsage(): String = "server <server>"
+
+    override fun getCommandCategory(): Category? = Category.GENERAL
 
     override fun getCommandDescription(): String = "Retrieve a Minecraft Server's status."
 

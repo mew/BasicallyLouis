@@ -3,7 +3,7 @@ package zone.nora.basicallylouis.config
 /**
  * Discord Bot Token.
  */
-const val BOT_TOKEN: String = "bot-token"
+const val BOT_TOKEN: String = "MjkxNzIzNDk4NzIyNjg5MDI1.WMnWrg.FbarZylN4KC3lxmSuhw0OKsC8lI"
 
 /**
  * Your Discord ID.
@@ -38,6 +38,11 @@ const val ERROR_IMAGE: String = "https://upload.wikimedia.org/wikipedia/commons/
 val BLOCKED_USERS: List<Long> = listOf(
     711562322878922803L
 )
+
+/**
+ * Your Slothpixel url. If you are not self-hosting Slothpixel, leave this as is.
+ */
+const val SLOTHPIXEL_URL: String = "https://api.slothpixel.me/api"
 
 /**
  * Your Slothpixel API Key. If you do not have one, leave this as null.
