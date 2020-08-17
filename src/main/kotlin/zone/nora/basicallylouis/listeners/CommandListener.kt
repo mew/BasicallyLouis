@@ -3,6 +3,7 @@ package zone.nora.basicallylouis.listeners
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent
 import net.dv8tion.jda.api.hooks.ListenerAdapter
 import zone.nora.basicallylouis.commands.AbstractCommand
+import zone.nora.basicallylouis.config.BOT_COMMANDS_CHANNEL
 import zone.nora.basicallylouis.config.COMMAND_PREFIX
 
 class CommandListener : ListenerAdapter() {
@@ -27,7 +28,13 @@ class CommandListener : ListenerAdapter() {
                         if (i != 0) args.add(words[i])
                     }
                 } catch (_: Exception) { }
-                if (flag) it.processCommand(args.toTypedArray(), event)
+                if (flag) {
+                    if (it.botCommandsOnly && event.channel.idLong != BOT_COMMANDS_CHANNEL) {
+                        event.channel.sendMessage("This channel can only be used in the bot commands channel.")
+                    } else {
+                        it.processCommand(args.toTypedArray(), event)
+                    }
+                }
             }
         }
     }
